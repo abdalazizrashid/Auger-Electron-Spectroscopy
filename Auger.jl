@@ -23,7 +23,7 @@ function Plot()
     end
     Plot()
 function Shifting()
-    
+    i_f = 2 + [i_f]
 
 
 
