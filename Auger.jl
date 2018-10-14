@@ -1,14 +1,31 @@
-using Plots
-using InspectDR
+using Plotly
+using WebIO
+function Import()
+    j = readlines("test.csv")
+    i = readlines("y.csv")
+    j_f = parse.([Float64], j)
+    i_f = parse.([Float64], i)
+    #j_f = Vector[[12,212,23,24,34,4,3],[12,34,54,3,43,32,6,4]]
+    #i_f = Vector[[12,34,54,3,43,32,6,4],[12,34,54,3,43,32,6,4]]
+    end
+    Import()
+function Plot()
 
-i = readlines("y.csv")
-i_f = parse.(BigFloat, i)
-#l = @layout(2)
-plot(i_f, color = "red" ,background_color= "black",linewidth =0.5)
-#plot(i_f, layout = 4)
-############################################
-j = readlines("test.csv")
-j_f = parse.([Float64], j)
-plot!(j_f ,background_color= "black",color = "yellow" , linewidth =0.5)#plot!(j_f,color = "red",layout = 2)
-s = i_f - j_f
-plot!([s], color ="blue")
+    layout = Layout(title="Auger Electron Spectroscopy", autosize=true, #width=950,
+                    #height=800,
+                     margin=attr(l=65, r=50, b=65, t=90))
+    data = i_f
+
+    x = PlotlyJS.plot(data, layout)
+    #y = PlotlyJS.plot(i_f, layout)
+    #[x,y]
+
+    end
+    Plot()
+function Shifting()
+    
+
+
+
+    end
+    Shifting()
